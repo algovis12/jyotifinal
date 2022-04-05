@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>Algo Visualizer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <div class="header-title">Algorithm Visualizer</div>
+      <div class="auth">
+        <button class="btn-outlined hidden" id="login" onclick="window.location.href='./login.html'">Login</button>
+        <button class="btn-outlined hidden" id="logout" onclick="logout()">Logout</button>
+        <div class="avatar hidden" id="avatar">A</div>
+      </div>
+    </div>
+    <div class="array-inputs">
+      <div class="controls">
+        <p>Size of the array:</p>
+        <input id="a_size" type="range" min="10" max="50" step="1" value="25" />
+      </div>
+      <div class="controls">
+        <p>Speed of the algorithm:</p>
+        <input id="a_speed" type="range" min="1" max="5" step="1" value="4" />
+       </div>
+
+
+       
+       <button class="readme" type="button" data-bs-target="#myModal" data-bs-toggle="modal">READ ME</button>
+
+       <div class="modal" id="myModal">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header bg-info text-white">
+                       <h5 class="modal-title">step 1</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                       <label for="message" class="form-label" style="color:black;">CHOOSE THE ALGORITHM YOU WANT TO LEARN</label>
+                       
+                   </div>
+                   <div class="modal-footer">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal1" data-bs-dismiss="modal">Next</button>
+                       <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="modal" id="myModal1">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header bg-info text-white">
+                       <h5 class="modal-title">step 2</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                       <label for="message" class="form-label" style="color:black;">CHOOSE THE ANIMATION SPEED ALONG WITH THE SIZE OF ARRAY.</label>
+                       
+                   </div>
+                   <div class="modal-footer">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal2" data-bs-dismiss="modal">Next</button>
+                       <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="modal" id="myModal2">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header bg-info text-white">
+                       <h5 class="modal-title">step 3</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                       <label for="message" class="form-label" style="color:black;" >COLOUR REPRESENTATION <br> ORANGE = UNSORTED ELEMENT <br>PURPLE = NEXT POSITION ELEMENT <br> RED = COMPARISONS AND SWAPPING ACCORDINGLY <br> GREEN = FINAL POSITION OF ELEMENT <br> </label>
+                       
+                   </div>
+                   <div class="modal-footer">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal3" data-bs-dismiss="modal">Next</button>
+                       <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="modal" id="myModal3">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header bg-info text-white">
+                       <h5 class="modal-title">step 4</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                       <label for="message" class="form-label" style="color:black;" >IF YOU WANT TO CHANGE ALGORITHM IN BETWEEN . CLICK ON RESET AND THERE YOU GO</label>
+                   
+                   </div>
+                   <div class="modal-footer">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal4" data-bs-dismiss="modal">Next</button>
+                       <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="modal" id="myModal4">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header bg-info text-white">
+                       <h5 class="modal-title">step 5</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                       <label for="message" class="form-label" style="color:black;"  >WANT TO TEST .... SIMPLE, GO TAKE UP THE QUIZ</label>
+                   
+                   </div>
+                   <div class="modal-footer">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#secondModal" data-bs-dismiss="modal">Next</button>
+                       <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="modal" id="secondModal">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header alert alert-success">
+                       <h5 class="modal-title">finally</h5>
+                       <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                   </div>
+                   <div class="modal-body">
+                    <p style="color:black;"> THERE YOU GO!!!</p>
+                    
+                   </div>
+               </div>
+           </div>
+       </div>
+       
+
+         
+      <button id="a_generate">Generate New Array</button>
+      <button class="quiz" onclick="window.location.href = './begin-quiz.html'">
+        Take a Quiz
+      </button>
+    </div>
+  </header>
+  <main>
+    <div class="algos">
+      <h4>Algorithms</h4>
+      <button>Bubble</button>
+      <button>Selection</button>
+      <button>Insertion</button>
+      <button>Merge</button>
+      <button>Quick</button>
+      <button>Heap</button>
+    </div>
+    <div id="array_container"></div>
+  </main>
+  <script src="./js/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="./js/firebase.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/visualizations.js"></script>
+  <script src="./js/sorting_algos/bubble_sort.js"></script>
+  <script src="./js/sorting_algos/heap_sort.js"></script>
+  <script src="./js/sorting_algos/insertion_sort.js"></script>
+  <script src="./js/sorting_algos/merge_sort.js"></script>
+  <script src="./js/sorting_algos/quick_sort.js"></script>
+  <script src="./js/sorting_algos/selection_sort.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
